@@ -5,6 +5,7 @@ class KVRXPlayer {
 		console.log("Creating player element");
 		this.audioElement = document.createElement('audio');
 		this.audioElement.setAttribute("preload", "auto");
+		this.audioElement.setAttribute("title", "KVRX Livestream");
 		this.audioElement.autobuffer = true;
 		
 		//Add player source and properties to element
