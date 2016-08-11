@@ -23,21 +23,22 @@ To view the live project, follow these steps:
 
 ## Todo
 
-0. Fix this issue - "..migrations are part of your code, and must be in version control." http://stackoverflow.com/questions/38134535/django-on-heroku-relation-does-not-exist
-
-1. Create login infrastructure
-  1. User login page
-  	a. If user is logged in, redirect to user bio
-  2. Dj bio page
-  3. Dj edit information page (only accessable if current user is logged in or if superuser/genadmin logged in)
-  	a. On accessing page, redirect to home page is above criteria is not met
-2. Create playlist backend
-  1. Create show page with all playlists
-  2. Create 'add playlist' page to create a playlist
-    a. You should only be able to select your own 
-3. Create blog infrastructure for home page
-4. Add player to navbar
-5. Documentation lol
+- Add images to DJ page
+  - Have to host off a media server - most likely Amazon S3. [Instructions here](http://caseypt.github.io/2012/01/02/s3-heroku-django.html)
+- Create singular login page
+  - If accessed by someone who's already logged in, redirect to their Deejay page
+- Create backend for all information
+  - Edit page for all Deejay information (accessible by that DJ or any staff)
+  - Edit page for Deejays show information (accessible by that DJ or any staff)
+    - Should only allow user to edit their own show
+  - Edit page for Playlist information (accessible by that DJ or any staff)
+    - Should only allow user to edit playlists for their show
+- Create playlist backend
+  - Create multiple Song objects with one form input
+  - Saves to playlist
+  - User can only create playlists for their show
+- Add player to navbar
+- Documentation and instruction
 
 ## Deploy to Heroku instructions
 
