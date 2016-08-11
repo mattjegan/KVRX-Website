@@ -33,3 +33,6 @@ margin-right: auto;
 	display:block;
     margin:auto;
 }
+.glyphicon {
+    font-size: 20px;
+}
