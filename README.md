@@ -39,3 +39,5 @@ Mac instructions
   - Saves to playlist
   - User can only create playlists for their show
 - Documentation and instruction
+- Implement navbar/homepage song information
+  - Add BooleanField "currentSong" to Song model, then [override the Save method](http://stackoverflow.com/questions/1455126/unique-booleanfield-value-in-django) to enforce it's uniqueness. Just add the song to getBaseInfo() in pages/views!

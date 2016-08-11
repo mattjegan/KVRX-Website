@@ -7,7 +7,7 @@ from django.db import models
 class Deejay(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	dj = models.CharField(max_length=50, verbose_name='DJ Name')
-	pic = models.ImageField()
+	pic = models.ImageField(blank=True, null=True)
 	role = models.CharField(max_length=50, verbose_name='Job title', default="DJ")
 	bio = models.TextField(verbose_name='Bio')
 	phone = models.CharField(max_length=15, verbose_name='Phone number') #kind of a hack. allows you to enter 15 characters. here's the fix: http://stackoverflow.com/questions/19130942/whats-the-best-way-to-store-phone-number-in-django-models
@@ -49,6 +49,16 @@ class Song(models.Model):
 	genre = models.CharField(max_length=50, null=True, blank=True)
 	label = models.CharField(max_length=50, null=True, blank=True)
 	txArtist = models.BooleanField(verbose_name='Texas artist?')
+	currentTrack = models.BooleanField(verbose_name='Current track?')
 	def __unicode__(self):
 		return "%s by %s" % (self.title, self.artist)
-
+	def save(self, *args, **kwargs):
+		if self.currentTrack:
+			try:
+				temp = Song.objects.get(currentTrack=True)
+				if self != temp:
+					temp.currentTrack = False
+					temp.save()
+			except Song.DoesNotExist:
+				pass
+		super(Song, self).save(*args, **kwargs)
