@@ -27,7 +27,6 @@ Mac instructions
 
 ## Todo
 
-- Deploy sample to Heroku
 - Add images to DJ page
   - Have to host off a media server - most likely Amazon S3. [Instructions here](http://caseypt.github.io/2012/01/02/s3-heroku-django.html)
 - Create singular login page
@@ -52,3 +51,4 @@ Mac instructions
 - Default backend doesn't let you add a date to your playlists
 - Default backend uses military time for show start/end times
 - Playlist isn't showing all songs or repeat songs on show detail page
+- Users can create pages with same link as pre-defined pages (e.g. 'shows')
