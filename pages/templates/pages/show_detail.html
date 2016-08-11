@@ -10,6 +10,7 @@
 			<div class="panel-body">
 				<h4>{{show.showname}}</h4>
 				<h5><a href="{% url 'pages_dj_detail' djName=show.dj.dj %}">DJ {{show.dj.dj}}</a></h5>
+				<h5>{{show.get_showDate_display }} at {{show.startTime|time:"h:i a"}}</h5>
 				<p>{{show.description}}</p>
 				<hr>
 				{% for playlist in playlists %}

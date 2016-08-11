@@ -46,3 +46,5 @@ Mac instructions
 
 ## Issues
 - Default backend doesn't let you add a date to your playlists
+- Default backend uses military time for show start/end times
+- Playlist isn't showing all songs or repeat songs on show detail page
