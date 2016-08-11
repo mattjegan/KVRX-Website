@@ -22,10 +22,12 @@ urlpatterns = [
     #Index
     url(r'^$', views.index, name="pages_index"),
     #Hardcoded pages
-    url(r'^shows', views.shows, name="pages_shows_index"),
     url(r'^base', views.base, name="pages_base"), #REMOVE IN PRODUCTION
+    url(r'^shows', views.shows, name="pages_shows_index"),
     url(r'^login', views.login, name="pages_login"),
+    #Keyword pages
     url(r'^dj/(?P<djName>.+)/$', views.dj_detail, name="pages_dj_detail"),
+    url(r'^show/(?P<namegiven>.+)/$', views.show_detail, name="pages_show_detail"),
     #User created pages (CMS)
     url(r'^(?P<p>.+)/$', views.custom_page, name="pages_custom_page"),
 ]

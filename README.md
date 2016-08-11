@@ -41,3 +41,8 @@ Mac instructions
 - Documentation and instruction
 - Implement navbar/homepage song information
   - Add BooleanField "currentSong" to Song model, then [override the Save method](http://stackoverflow.com/questions/1455126/unique-booleanfield-value-in-django) to enforce it's uniqueness. Just add the song to getBaseInfo() in pages/views!
+- Add Semester and Year field to the Show class
+- Add support for shows that start and end on different days (e.g. 11pm to 1am)
+
+## Issues
+- Default backend doesn't let you add a date to your playlists

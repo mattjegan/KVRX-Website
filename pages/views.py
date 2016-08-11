@@ -22,17 +22,26 @@ def index(request):
 def custom_page(request, p):
 	userPage = get_object_or_404(Page, pageURL=p)
 	p, p2 = getBaseInfo()
-	return render(request, 'pages/page_detail.html', {'p':p, 'p2':p2, 'content': userPage})
+	return render(request, 'pages/details/page_detail.html', {'p':p, 'p2':p2, 'content': userPage})
 
 def login(request):
 	p, p2 = getBaseInfo()
 	return render(request, 'pages/login.html', {'p':p, 'p2':p2})
 
-def shows(request):
-	p, p2 = getBaseInfo()
-	return render(request, 'pages/base.html', {'p':p, 'p2':p2})
-
 def dj_detail(request, djName):
-	dj = get_object_or_404(Deejay.objects.filter(dj__iexact=djName))
+	djObject = get_object_or_404(Deejay.objects.filter(dj__iexact=djName))
+	shows = Show.objects.filter(dj=djObject)
 	p, p2 = getBaseInfo()
-	return render(request, 'pages/dj_detail.html', {'p':p, 'p2':p2, 'dj':dj})
+	return render(request, 'pages/details/dj_detail.html', {'p':p, 'p2':p2, 'dj':djObject, 'shows':shows})
+
+def show_detail(request, namegiven):
+	showObject = get_object_or_404(Show.objects.filter(showname__iexact=namegiven))
+	playlists = Playlist.objects.filter(show=showObject)
+	p, p2 = getBaseInfo()
+	return render(request, 'pages/details/show_detail.html', {'p':p, 'p2':p2, 'show':showObject, 'playlists':playlists})
+
+def shows(request):
+	djs = Deejay.objects.all()
+	shows = Show.objects.all()
+	p, p2 = getBaseInfo()
+	return render(request, 'pages/show_list.html', {'p':p, 'p2':p2, 'djs':djs, 'shows':shows})

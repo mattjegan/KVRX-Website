@@ -1,0 +1,28 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+<div class="row">
+	<div class="row">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Shows</h3>
+			</div>
+			<div class="panel-body">
+				<h4>DJs and Shows</h4>
+				<ul>
+				{% for deejay in djs %}
+					<a href="{% url 'pages_dj_detail' djName=deejay.dj %}"<li>{{deejay.dj}}</li></a>
+					<ul>
+					{% for show in shows %}
+					{% if show.dj.id == deejay.id %}
+						<a href="{% url 'pages_show_detail' namegiven=show.showname %}"><li>{{show.showname}}</li></a>
+					{% endif %}
+					{% endfor %}
+					</ul>
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -21,7 +21,7 @@ class Deejay(models.Model):
 
 class Show(models.Model):
 	showname = models.CharField(max_length=200, verbose_name='Show name')
-	dj = models.ForeignKey('auth.User', verbose_name='DJ')
+	dj = models.ForeignKey(Deejay, verbose_name='DJ')
 	dateChoices = (
 		('M', 'Monday'),
 		('T', 'Tuesday'),
@@ -36,7 +36,7 @@ class Show(models.Model):
 	endTime = models.TimeField(auto_now=False, verbose_name='End time')
 	description = models.TextField(verbose_name='Show description')
 	def __unicode__(self):
-		return "%s - %s" % (self.showname, self.dj)
+		return "%s - %s" % (self.showname, self.dj.dj)
 
 class Playlist(models.Model):
 	show = models.ForeignKey('Show')
