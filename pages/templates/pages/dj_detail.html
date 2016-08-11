@@ -9,7 +9,9 @@
 			<div class="panel-body">
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
+						{% if dj.has_image %}
 						<img src="{{ MEDIA_URL}}{{dj.pic.url}}">
+						{% endif %}
 						<div class="caption">
 							<h4>{{dj.dj}}</h4>
 							<p>{{dj.role}}</p>

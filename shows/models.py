@@ -13,6 +13,11 @@ class Deejay(models.Model):
 	phone = models.CharField(max_length=15, verbose_name='Phone number') #kind of a hack. allows you to enter 15 characters. here's the fix: http://stackoverflow.com/questions/19130942/whats-the-best-way-to-store-phone-number-in-django-models
 	def __unicode__(self):
 		return "%s %s - %s" % (self.user.first_name, self.user.last_name, self.dj)
+	def has_image(self):
+		try:
+			return self.pic.url
+		except:
+			return False
 
 class Show(models.Model):
 	showname = models.CharField(max_length=200, verbose_name='Show name')
