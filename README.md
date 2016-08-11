@@ -38,5 +38,4 @@ Mac instructions
   - Create multiple Song objects with one form input
   - Saves to playlist
   - User can only create playlists for their show
-- Add player to navbar
 - Documentation and instruction
