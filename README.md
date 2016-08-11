@@ -4,9 +4,13 @@ A KVRX website redesign using Django
 
 ## Features
 
-- Users can create and manage playlists
-- Users can create and manage KVRX pages
-- Users can manage a KVRX blog
+- Create users and grant/revoke certain permissions
+- Groups (such as 'Deejay' or 'Staff') automatically grant specific permissions to users in those groups
+- Store Deejays, Shows, Playlists, and Songs
+  - Specific detail pages for Deejays and Shows (which show Playlists)
+  - Specific page showing all Deejays and Shows
+- Create your own pages with custom HTML on the KVRX template
+  - Display link to pages on the front page
 
 ## File Documentation
 
