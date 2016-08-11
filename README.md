@@ -12,17 +12,18 @@ A KVRX website redesign using Django
 
 Coming soon!
 
-## How to Use
+## Run locally
 
-To view the live project, follow these steps:
+Mac instructions
 
-1. Navigate to the project directory in terminal
-2. Install the requirements (`$ pip install -r requirements.txt`)
+1. Navigate to the project directory in terminal `$ cd Downloads/KVRX-Website/`
+2. Install the requirements `$ pip install -r requirements.txt` (or `$ sudo pip install -r requirements.txt`)
 3. Run `$ python manage.py runserver`
 4. Navigate to `http://127.0.0.1:8000/` in your browser of choice.
 
 ## Todo
 
+- Deploy sample to Heroku
 - Add images to DJ page
   - Have to host off a media server - most likely Amazon S3. [Instructions here](http://caseypt.github.io/2012/01/02/s3-heroku-django.html)
 - Create singular login page
@@ -39,16 +40,3 @@ To view the live project, follow these steps:
   - User can only create playlists for their show
 - Add player to navbar
 - Documentation and instruction
-
-## Deploy to Heroku instructions
-
-1. `git commit -am "YOUR_COMMIT_MESSAGE"`		Commits changes
-2. `git push`									Pushes to GitHub
-3. `git push heroku master`						Pushes to Heroku (master can be changed for branch currently working on)
-4. `heroku run bash`							Creates shell to make changes on Heroku
-5. `python manage.py makemigrations pages`		Migrates changes in Pages
-6. `python manage.py makemigrations shows`		Migrates changes in Shows
-  * If you created any other apps, you would need to do the above for them too.
-7. `python manage.py migrate`					Migrates everything
-
-Good to go!
