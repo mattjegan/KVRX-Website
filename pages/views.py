@@ -33,7 +33,6 @@ def shows(request):
 	return render(request, 'pages/base.html', {'p':p, 'p2':p2})
 
 def dj_detail(request, djName):
-	print(djName)
-	dj = get_object_or_404(Deejay, dj=djName)
+	dj = get_object_or_404(Deejay.objects.filter(dj__iexact=djName))
 	p, p2 = getBaseInfo()
 	return render(request, 'pages/dj_detail.html', {'p':p, 'p2':p2, 'dj':dj})
