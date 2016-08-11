@@ -35,7 +35,7 @@ Mac instructions
   - Edit page for Playlist information (accessible by that DJ or any staff)
     - Should only allow user to edit playlists for their show
 - Create playlist backend
-  - Create multiple Song objects with one form input
+  - Create multiple Song objects with one form input. Use a [formset](https://docs.djangoproject.com/en/dev/topics/forms/formsets/)
   - Saves to playlist
   - User can only create playlists for their show
 - Documentation and instruction
