@@ -2,7 +2,7 @@
 
 A KVRX website redesign using Django
 
-## Features
+## Current Features
 
 - Create users and grant/revoke certain permissions
 - Groups (such as 'Deejay' or 'Staff') automatically grant specific permissions to users in those groups
@@ -11,10 +11,6 @@ A KVRX website redesign using Django
   - Specific page showing all Deejays and Shows
 - Create your own pages with custom HTML on the KVRX template
   - Display link to pages on the front page
-
-## File Documentation
-
-Coming soon!
 
 ## Run locally
 
@@ -38,10 +34,11 @@ Mac instructions
 |Offers concert and events calendar||Not yet started|
 |Music department functionality<br>- Tracking<br>- Tallying of what's added / played for charts<br>- Topless 39<br>- Reporting||Not yet started|
 |Must be able to handle ads provided by 3rd floor advertising department|High|Not yet started|
-|Offers space for uploading/accessing video content<br>- Concert performances<br>- Local Live<br>- Library Sessions<br>- Interviews||Not yet started|
+|Offers space for uploading/accessing video content<br>- Concert performances<br>- Local Live<br>- Library Sessions<br>- Interviews||Not yet started| 
 
 ## Immediate Todo
 
+- `git branch develop`
 - Add images to DJ page
   - Have to host off a media server - most likely Amazon S3. [Instructions here](http://caseypt.github.io/2012/01/02/s3-heroku-django.html)
 - Create singular login page
@@ -63,6 +60,9 @@ Mac instructions
 - Add support for shows that start and end on different days (e.g. 11pm to 1am)
 - Make navbar player persistent across pages
   - Check out [PersistJS](https://github.com/jeremydurham/persist-js)
+- Switch form using Paper bootswatch to Cosmo bootswatch pre-designer
+- Strip unnecessary rules from bootswatch file
+- Create .ico file
 
 ## Issues
 - Default backend doesn't let you add a date to your playlists
