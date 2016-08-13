@@ -39,6 +39,11 @@ Mac instructions
 ## Immediate Todo
 
 - `git branch develop`
+- Consolidate functionality and to-do list
+- Expand on functionality/to-do list and create step by step requirements
+- Move to-do list to Issues page on Github
+
+
 - Add images to DJ page
   - Have to host off a media server - most likely Amazon S3. [Instructions here](http://caseypt.github.io/2012/01/02/s3-heroku-django.html)
 - Create singular login page
